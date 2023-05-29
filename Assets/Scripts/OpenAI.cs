@@ -7,6 +7,9 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using TMPro;
 
+//Okay this script is an absolute mess. I will be honest, theres no point in even trying to
+//understand it. I am doing my best to optimize it
+
 public class AI : MonoBehaviour
 {
     public JArray currentConversation = new JArray();

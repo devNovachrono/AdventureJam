@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Basic functions for only the player, inherits basic Entity functions from EntityManager
+
 public class PlayerManager : EntityManager
 {
     [System.Serializable] public struct Controls {

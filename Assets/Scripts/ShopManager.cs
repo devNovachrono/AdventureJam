@@ -7,6 +7,9 @@ using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+//Just as confusing as the OpenAI scripts, dont even try LOL. Again, I'm doing my best to
+//make it better to read
+
 public class ShopManager : MonoBehaviour, IConversation
 {
     public TMP_InputField playerBox;

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls all player input detection. If you want to change something about the player
+//directly (like velocity), consider changing the EntityManager or PlayerManager
+
 public class PlayerInput : MonoBehaviour
 {
 
