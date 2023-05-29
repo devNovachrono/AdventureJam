@@ -10,8 +10,6 @@ public class PlayerManager : EntityManager
         public KeyCode interact;
     }
 
-    public string interactableTag;
-
     internal void Interact()
     {
         if (interactor == null) return;
@@ -24,9 +22,12 @@ public class PlayerManager : EntityManager
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == interactableTag)
+        if (other.tag == "Interactable")
         {
             interactor = other;
+        } else if (other.tag == "Candy")
+        {
+            Destroy(other.gameObject);
         }
     }
 
