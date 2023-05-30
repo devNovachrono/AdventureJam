@@ -10,7 +10,9 @@ using UnityEngine.SceneManagement;
 //Just as confusing as the OpenAI scripts, dont even try LOL. Again, I'm doing my best to
 //make it better to read
 
-public class ShopManager : MonoBehaviour, IConversation
+
+//This is the actual script. Anything above this line is just a placeholder for testing
+/* public class ShopManager : MonoBehaviour, IConversation
 {
     public TMP_InputField playerBox;
     public TextMeshProUGUI npcBox;
@@ -113,4 +115,4 @@ public class ShopManager : MonoBehaviour, IConversation
     {
         SceneManager.LoadScene("Town");
     }
-}
+} */

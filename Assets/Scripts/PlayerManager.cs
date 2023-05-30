@@ -27,6 +27,7 @@ public class PlayerManager : EntityManager
             interactor = other;
         } else if (other.tag == "Candy")
         {
+            GlobalData.AddCandy(1);
             Destroy(other.gameObject);
         }
     }
