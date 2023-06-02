@@ -9,6 +9,6 @@ public class ShopDoor : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        SceneManager.LoadScene("Shop");
+        Debug.Log("Open Shop Door!");
     }
 }
