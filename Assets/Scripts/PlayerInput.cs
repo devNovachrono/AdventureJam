@@ -22,10 +22,23 @@ public class PlayerInput : MonoBehaviour
         {
             playerManager.Interact();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (playerManager.currentConversation == null) return;
+            if (playerManager.currentConversation.ProceedDialogue() == false)
+            {
+                Destroy(playerManager.currentConversation.gameObject);
+            }
+        }
     }
 
     private void FixedUpdate() {
-        Vector3 movementForce = new Vector3(horizontalMomentum, verticalMomentum, 0) * playerManager.MoveSpeed;
+        Vector3 movementForce = Vector3.zero;
+        if (playerManager.currentConversation == null)
+        {
+            movementForce = new Vector3(horizontalMomentum, verticalMomentum, 0) * playerManager.MoveSpeed;
+        }
         playerManager.Movement(movementForce);
     }
 

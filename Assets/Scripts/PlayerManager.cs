@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Basic functions for only the player, inherits basic Entity functions from EntityManager
 
@@ -10,25 +11,30 @@ public class PlayerManager : EntityManager
         public KeyCode interact;
     }
 
+    public GameObject ConversationInstance;
+
+    public void BeginConversation(string[] dialogue, Sprite sprite)
+    {
+        if (currentConversation != null) return;
+
+        currentConversation = Instantiate(ConversationInstance).GetComponent<Conversation>();
+        currentConversation.SetupConversation(dialogue, sprite);
+    }
+
     internal void Interact()
     {
         if (interactor == null) return;
 
         IInteractable interactInterface = interactor.gameObject.GetComponent<IInteractable>();
-        if (interactInterface != null)
-        {
-            interactInterface.Interact();
-        }
+        if (interactInterface == null) return;
+
+        interactInterface.Interact();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Interactable")
         {
             interactor = other;
-        } else if (other.tag == "Candy")
-        {
-            GlobalData.AddCandy(1);
-            Destroy(other.gameObject);
         }
     }
 
@@ -40,4 +46,5 @@ public class PlayerManager : EntityManager
     }
 
     private Collider2D interactor;
+    internal Conversation currentConversation;
 }

@@ -12,7 +12,7 @@ public class EntityManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    internal void Movement(Vector3 velocity)
+    internal virtual void Movement(Vector3 velocity)
     {
         rb.velocity = velocity;
     }
